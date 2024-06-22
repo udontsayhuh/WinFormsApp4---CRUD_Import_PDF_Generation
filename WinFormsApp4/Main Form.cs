@@ -155,7 +155,7 @@ namespace WinFormsApp4
         {
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                printDocument.Print(); //this is a comment
+                printDocument.Print();
             }
             //var model = InvoiceDocumentDataSource.GetInvoiceDetails();
             //var document = new InvoiceDocument(model);
