@@ -8,6 +8,7 @@ using Image = QuestPDF.Infrastructure.Image;
 
 namespace QuestPDF.ExampleInvoice
 {
+    //This is Prof Mika's comment
     public class InvoiceDocument : IDocument
     {
         public static Image LogoImage { get; } = Image.FromFile("C:\\Users\\Ellen Grace Sinday\\source\\repos\\WinFormsApp4---CRUD_Import_PDF_Generation\\WinFormsApp4\\logo.png");
