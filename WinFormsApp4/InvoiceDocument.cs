@@ -4,12 +4,14 @@ using QuestPDF.Drawing;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using Image = QuestPDF.Infrastructure.Image;
 
 namespace QuestPDF.ExampleInvoice
 {
+    //This is Prof Mika's comment
     public class InvoiceDocument : IDocument
     {
-        //public static Image LogoImage { get; } = Image.FromFile("logo.png");
+        public static Image LogoImage { get; } = Image.FromFile("C:\\Users\\Ellen Grace Sinday\\source\\repos\\WinFormsApp4---CRUD_Import_PDF_Generation\\WinFormsApp4\\logo.png");
 
         public InvoiceModel Model { get; }
 
@@ -27,7 +29,7 @@ namespace QuestPDF.ExampleInvoice
                 .Page(page =>
                 {
                     page.Margin(70);
-
+                    page.Size(PageSizes.A3.Landscape());
                     page.Header().Element(ComposeHeader);
                     page.Content().Element(ComposeContent);
                     page.Footer().AlignCenter().Text(text =>
@@ -47,7 +49,7 @@ namespace QuestPDF.ExampleInvoice
                 {
                     column
                         .Item().Text($"Invoice #{Model.InvoiceNumber}")
-                        .FontSize(40).SemiBold().FontFamily("Times New Roman");
+                        .FontSize(40).SemiBold().FontColor(Colors.Blue.Medium).FontFamily("Times New Roman");
 
                     column.Item().Text(text =>
                     {
@@ -62,7 +64,7 @@ namespace QuestPDF.ExampleInvoice
                     });
                 });
 
-                //row.ConstantItem(175).Image(LogoImage);
+                row.ConstantItem(175).Image(LogoImage);
             });
         }
 
@@ -151,6 +153,8 @@ namespace QuestPDF.ExampleInvoice
             Title = title;
             Address = address;
         }
+
+        //hello maam mika test
 
         public void Compose(IContainer container)
         {

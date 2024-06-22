@@ -153,13 +153,13 @@ namespace WinFormsApp4
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                printDocument.Print();
-            }
-            //var model = InvoiceDocumentDataSource.GetInvoiceDetails();
-            //var document = new InvoiceDocument(model);
-            //document.GeneratePdfAndShow();
+            //if (printDialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    printDocument.Print();
+            //}
+            var model = InvoiceDocumentDataSource.GetInvoiceDetails();
+            var document = new InvoiceDocument(model);
+            document.GeneratePdfAndShow();
         }
         private bool isTitlePagePrinted = false;
         private int currentProductIndex = 0;
